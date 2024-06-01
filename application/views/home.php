@@ -171,8 +171,6 @@
 						</form>
 					</div>
 				</div>
-
-				<div class="row">
 					<?php if (isset($error)): ?>
 						<p style="color: red;"><?php echo $error; ?></p>
 					<?php endif; ?>
@@ -201,7 +199,6 @@
 							<?php endforeach; ?>
 						</div>
 					<?php endif; ?>
-				</div>
 			</div>
 
 		</section><!-- End Portfolio Section -->
