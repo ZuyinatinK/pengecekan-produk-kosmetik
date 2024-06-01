@@ -29,6 +29,9 @@
 	<!-- Template Main CSS File -->
 	<link href="<?= base_url() ?>assets/assets_home/css/style.css" rel="stylesheet">
 
+    <!-- Icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     </head>
 
     <body>
@@ -40,8 +43,8 @@
             <div class="container">
 
                 <ol>
-                <li><a href="<?php echo base_url(''); ?>">Home</a></li>
-                <li>Product Details</li>
+                    <li><a href="<?php echo base_url(''); ?>">Home</a></li>
+                    <li>Product Details</li>
                 </ol>
                 <h2>Product Details</h2>
 
@@ -50,37 +53,52 @@
 
         <!-- ======= Portfolio Details Section ======= -->
         <section id="portfolio-details" class="portfolio-details">
-        <div class="container">
+            <div class="container">
 
-            <div class="row gy-4">
+                <div class="row gy-4">
 
-            <div class="col-lg-8">
-                <div class="portfolio-details-slider swiper">
-                <div class="swiper-wrapper align-items-center">
+                    <div class="col-lg-6">
+                        <div class="portfolio-details-slider swiper">
+                            <div class="swiper-wrapper align-items-center">
 
-                    <div class="swiper-slide">
-                    <img src="<?= base_url('assets/assets_dashboard/img/coba.png') ?>" alt="">
+                                <div class="swiper-slide">
+                                    <img src="<?= base_url() . '/gambar/' . $detail['gambar']; ?>" alt="" style="width: 450px">
+                                </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
                     </div>
+            
 
-                </div>
-                <div class="swiper-pagination"></div>
+                    <div class="col-lg-6">
+                        <div class="portfolio-info">
+                            <h3>Product Information</h3>
+                            <ul>
+                                <li><strong>Nama Produk</strong>: <?= $detail['nama_produk']; ?></li>
+                                <li><strong>Jenis Produk</strong>: <?= $detail['nama_jenisproduk']; ?></li>
+                                <li><strong>Produsen</strong>: <?= $detail['nama_produsen']; ?></li>
+                                <li><strong>Gender</strong>: <?= $detail['gender']; ?></li>
+                                <li><strong>Sertifikat BPOM</strong>: 
+                                    <?php if ($detail['sertifikasi_BPOM'] == NULL) {
+                                            echo '<span class="material-icons" style="color: red;">report_gmailerrorred</span>';
+                                        } else {
+                                            echo '<img src="' . base_url() . 'assets/assets_home/img/bpom.png" alt="Sertifikasi BPOM" style="width: 50px; height: 50px;">';
+                                        } ?>
+                                </li>
+                                <li><strong>Sertifikat MUI</strong>: 
+                                    <?php if ($detail['sertifikasi_MUI'] == NULL) {
+                                            echo '<span class="material-icons" style="color: red;">report_gmailerrorred</span>';
+                                        } else {
+                                            echo '<img src="' . base_url() . 'assets/assets_home/img/mui.png" alt="Sertifikasi MUI" style="width: 50px; height: 50px;">';
+                                        } ?>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-lg-4">
-                <div class="portfolio-info">
-                <h3>Project information</h3>
-                <ul>
-                    <li><strong>ID Produk</strong>: 1</li>
-                    <li><strong>Nama Produk</strong>: Scarlett</li>
-                    <li><strong>Gender</strong>: Female</li>
-                    <li><strong>Sertifikat BPOM</strong>: Tersertifikasi</li>
-                    <li><strong>Sertifikat MUI</strong>: Tersertifikasi</li>
-
-                </ul>
-            </div>
-
-        </div>
         </section><!-- End Portfolio Details Section -->
 
     </main><!-- End #main -->
@@ -91,42 +109,42 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row gy-4">
-                <div class="col-lg-5 col-md-12 footer-info">
-                    <a href="home" class="logo d-flex align-items-center">
-                    <img src="<?= base_url() ?>assets/assets_home/img/logoo.png" alt="">
-                    <span>CosmeticsSafety</span>
-                    </a>
-                    <p>Sistem informasi ini digunaan untuk mengecek keamanan <br> dan kehalalan segala jenis produk kosmetik anda.</p>
-                    <div class="social-links mt-3">
-                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    <div class="col-lg-5 col-md-12 footer-info">
+                        <a href="home" class="logo d-flex align-items-center">
+                            <img src="<?= base_url() ?>assets/assets_home/img/logoo.png" alt="">
+                            <span>CosmeticsSafety</span>
+                        </a>
+                        <p>Sistem informasi ini digunaan untuk mengecek keamanan <br> dan kehalalan segala jenis produk kosmetik anda.</p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-lg-2 col-6 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">About</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Product</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Blog</a></li>
-                    <li><i class="bi bi-chevron-right"></i> <a href="#">Login</a></li>
-                    </ul>
-                </div>
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">About</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Product</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Blog</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Login</a></li>
+                        </ul>
+                    </div>
 
 
-                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                    <h4>Contact Us</h4>
-                    Jl. Gajayana No.50,<br> 
-                    Dinoyo, Kec. Lowokwaru,<br> 
-                    Kota Malang, Jawa Timur 65144 <br>
-                    <strong>Phone:</strong> (0341) 551354<br>
-                    <strong>Email:</strong> info@uin-malang.ac.id<br>
-                    </p>
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                        <h4>Contact Us</h4>
+                        Jl. Gajayana No.50,<br> 
+                        Dinoyo, Kec. Lowokwaru,<br> 
+                        Kota Malang, Jawa Timur 65144 <br>
+                        <strong>Phone:</strong> (0341) 551354<br>
+                        <strong>Email:</strong> info@uin-malang.ac.id<br>
+                        </p>
 
-                </div>
+                    </div>
 
                 </div>
             </div>
